@@ -1,0 +1,12 @@
+{
+	"plugin-data":
+	{
+		"name": "Sidebar Addons",
+		"description": "Display random and/or recommended pages on the sidebar."
+	},
+	"show-random-pages": "Show Random Pages",
+    "show-recommended-pages": "Show Recommended Pages",
+    "number-of-items": "Number of items",
+    "random-pages-label": "Random Pages Label",
+    "recommended-pages-label": "Recommended Pages Label"
+}

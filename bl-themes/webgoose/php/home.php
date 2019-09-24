@@ -47,7 +47,7 @@
         <?php if (Paginator::showPrev()): ?>
         <li class="page-item">
             <a class="page-link" href="<?php echo Paginator::previousPageUrl() ?>" tabindex="-1">&#9664;
-                <?php echo $L->get('Туда'); ?></a>
+                <?php echo $L->get('Сюда'); ?></a>
         </li>
         <?php endif ?>
 
@@ -57,7 +57,7 @@
 
         <?php if (Paginator::showNext()): ?>
         <li class=" page-item">
-            <a class="page-link" href="<?php echo Paginator::nextPageUrl() ?>"><?php echo $L->get('Сюда'); ?>
+            <a class="page-link" href="<?php echo Paginator::nextPageUrl() ?>"><?php echo $L->get('Туда'); ?>
                 &#9658;</a>
         </li>
         <?php endif ?>
