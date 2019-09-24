@@ -1,36 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="<?php echo Theme::lang() ?>">
 
 <head>
-    <meta charset="UTF-8">
-    <?php echo Theme::metaTags('description') ?>
-    <?php echo Theme::metaTags('title') ?>
-    <!-- CSS -->
-    <?php echo Theme::cssBootstrap() ?>
-    <?php echo Theme::css('css/style.css') ?>
-    <!-- Load plugins with the hook siteHead -->
-    <?php Theme::plugins('siteHead') ?>
+    <?php include(THEME_DIR_PHP.'head.php'); ?>
 </head>
 
 <body>
-    <!-- Load plugins with the hook siteBodyBegin -->
     <?php Theme::plugins('siteBodyBegin') ?>
 
-    <h1><?php echo $site->title() ?></h1>
-    <h2><?php echo $site->slogan() ?></h2>
+    <?php include(THEME_DIR_PHP.'navbar.php'); ?>
 
-    <?php if ($WHERE_AM_I=='page'): ?>
-    <p>The user is watching a particular page</p>
-    <?php elseif ($WHERE_AM_I=='home'): ?>
-    <?php foreach ($content as $page): ?>
-    <h3><?php echo $page->title(); ?></h3>
-    <?php endforeach ?>
-    <?php endif ?>
+    <div class="container">
+        <div class="row">
+            <div class="col-9">
+                <?php
+                    if($WHERE_AM_I == 'page') {
+                        include(THEME_DIR_PHP.'page.php');
+                    } else {
+                        include(THEME_DIR_PHP.'home.php');
+                    }
+                ?>
+            </div>
+            <div class="col-3">
+                <?php include(THEME_DIR_PHP.'sidebar.php'); ?>
+            </div>
+        </div>
+    </div>
 
 
-    <?php echo Theme::jquery() ?>
-    <?php echo Theme::jsBootstrap() ?>
-    <!-- Load plugins with the hook siteBodyBegin -->
+    <?php include(THEME_DIR_PHP.'footer.php'); ?>
+
+    <?php
+        echo Theme::js('js/jquery-3.4.1.min.js');
+        echo Theme::js('js/bootstrap.min.js');
+    ?>
+
     <?php Theme::plugins('siteBodyEnd') ?>
 </body>
 
