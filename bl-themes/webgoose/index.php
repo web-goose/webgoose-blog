@@ -27,12 +27,12 @@
         </div>
     </div>
 
-
     <?php include(THEME_DIR_PHP.'footer.php'); ?>
 
     <?php
         echo Theme::js('js/jquery-3.4.1.min.js');
         echo Theme::js('js/bootstrap.min.js');
+        echo Theme::js('js/site.js');
     ?>
 
     <?php Theme::plugins('siteBodyEnd') ?>

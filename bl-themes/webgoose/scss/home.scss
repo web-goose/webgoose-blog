@@ -1,0 +1,48 @@
+.post-card {
+    background-color: #ffffff;
+    padding: .3rem 2rem;
+    margin: 1.2rem 0;
+    border-radius: .5rem;
+}
+.read-more {
+    font-size: 1em;
+}
+
+.paginator {
+    .pagination {
+        padding: 0;
+        justify-content: center;
+        display: flex;
+        list-style: none;
+        .page-item {
+            background-color: #ffffff;
+            border-radius: .5rem;
+            padding: .8rem 1rem;
+            margin-right: .3rem;
+            transition: .2s;
+            .page-link {
+                margin: 0;
+            }
+        }
+        .page-item:hover {
+            background-color: $lightTextColor;
+            .page-link {
+                color: #fff;
+            }
+        }
+    }
+}
+
+.tag {  
+    color: $tagColor;
+    font-weight: 500;
+    margin: 0 .3em;
+    font-size: 1em;
+    background-color: $tagBackgroundColor;
+    padding: .3rem .8rem;
+    border-radius: .3rem;
+}
+.tag:hover {
+    background-color: $tagBackgroundColorHover;
+    color: $tagColorHover;
+}

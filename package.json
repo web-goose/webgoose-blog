@@ -1,0 +1,22 @@
+{
+  "name": "webgoose-blog",
+  "version": "1.0.0",
+  "description": "blog for webgoose studio",
+  "main": "index.js",
+  "scripts": {
+    "scss": "node-sass -w bl-themes/webgoose/scss/main.scss bl-themes/webgoose/css/styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/web-goose/webgoose-blog.git"
+  },
+  "author": "Aventhor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/web-goose/webgoose-blog/issues"
+  },
+  "homepage": "https://github.com/web-goose/webgoose-blog#readme",
+  "dependencies": {
+    "node-sass": "^4.12.0"
+  }
+}

@@ -10,26 +10,41 @@
 
     <?php Theme::plugins('pageBegin'); ?>
 
-    <?php if ($page->coverImage()): ?>
-    <img class="" src="<?php echo $page->coverImage(); ?>" />
-    <?php endif ?>
-
     <div class="post-card-body">
         <a class="" href="<?php echo $page->permalink(); ?>">
             <h2 class=""><?php echo $page->title(); ?></h2>
         </a>
 
+        <?php if ($page->coverImage()): ?>
+        <img class="card-img" src="<?php echo $page->coverImage(); ?>" />
+        <?php endif ?>
+
         <h5 class="">
-            <?php echo $page->date(); ?>
-        </h5>
-        <h6>
+            <?php echo $page->date(); ?> &#9679;
             <?php echo $L->get('Примерное время чтения') . ': ' . $page->readingTime(); ?>
-        </h6>
+        </h5>
+
+        <?php if ($page->tags()): ?>
+        <h5>Метки:
+            <?php 
+            $returnsArray = true;
+
+            $items = $page->tags($returnsArray);
+
+            foreach ($items as $tagKey=>$tagName) {
+                $tag = new Tag($tagKey);
+
+                echo '<a class="tag" href="'.$tag->permalink().'">'.$tag->name().'</a>';
+            }
+
+        ?>
+        </h5>
+        <?php endif ?>
 
         <?php echo $page->contentBreak(); ?>
 
         <?php if ($page->readMore()): ?>
-        <a href="<?php echo $page->permalink(); ?>">
+        <a class="read-more" href="<?php echo $page->permalink(); ?>">
             <?php echo $L->get('Читать дальше'); ?>
         </a>
         <?php endif ?>
@@ -51,9 +66,11 @@
         </li>
         <?php endif ?>
 
-        <li class="page-item <?php if (Paginator::currentPage()==1) echo 'disabled' ?>">
+        <?php if (Paginator::currentPage() !=1 ): ?>
+        <li class="page-item">
             <a class="page-link" href="<?php echo Theme::siteUrl() ?>">Главная</a>
         </li>
+        <?php endif ?>
 
         <?php if (Paginator::showNext()): ?>
         <li class=" page-item">
