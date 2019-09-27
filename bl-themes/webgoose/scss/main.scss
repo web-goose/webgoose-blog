@@ -1,41 +1,78 @@
-@import 'variables.scss';
+@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500,700&display=swap');
+@import 'themes.scss';
+
+
+@mixin themify($themes: $themes) {
+    @each $theme, $map in $themes {
+  
+      .theme-#{$theme} & {
+        $theme-map: () !global;
+        @each $key, $submap in $map {
+          $value: map-get(map-get($themes, $theme), '#{$key}');
+          $theme-map: map-merge($theme-map, ($key: $value)) !global;
+        }
+  
+        @content;
+        $theme-map: null !global;
+        }
+    }
+}
+
+@function themed($key) {
+    @return map-get($theme-map, $key);
+}
+
 @import 'header.scss';
 @import 'home.scss';
-@import 'page.scss';
+@import 'sidebar.scss';
 @import 'footer.scss';
 
-@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500,700&display=swap');
-
+  
 body {
-    margin: 0;
-    margin-top: 5rem;
-    font-size: 10px;
-    background-color: $backgroundColor;
     height: 100%;
+    margin: 0;
+    font-size: 10px;
 }
-p {
-    font-family: 'Rubik';
-    font-size: 1.8em;
-    font-weight: 400;
-    color: $textColor;
+
+.wrapper {
+    @include themify($themes) {
+        background-color: themed('backgroundColor');
+        transition: $transition;
+    }
 }
 
 p {
-    a {
-        font-size: 1em;
+    @include themify($themes) {
+        font-family: 'Rubik';
+        font-size: 1.8em;
+        font-weight: 400;
+        color: themed('textColor');
+        transition: $transition;
+    }
+}
+
+p {
+    @include themify() {
+        a {
+            font-size: 1em;
+        }
     }
 }
 
 a {
-    font-family: 'Rubik';
-    font-size: 1.6em;
-    text-decoration: none;
-    color: $linkColor;
-    transition: 0.2s;
+    @include themify($themes) {
+        font-family: 'Rubik';
+        font-size: 1.6em;
+        text-decoration: none;
+        color: themed('linkColor');
+        transition: $transition;
+    }
 }
 
 a:hover {
-    color: $linkColorHover;
+    @include themify($themes) {
+        color: themed('linkColorHover');
+    }
 }
 
 h1,
@@ -45,50 +82,70 @@ h4,
 h5,
 h6 {
     font-family: 'Rubik';
+    transition: $transition;
 }
 
 h1 {
-    font-size: 2.6em;
-    font-weight: 700;
-    color: $firstTitleColor;
-    margin: 1rem 0;
+    @include themify() {
+        font-size: 2.6em;
+        font-weight: 700;
+        color: themed('TitleColor');
+        margin: 1rem 0;
+    }
 }
 
 h2 {
-    font-weight: 500;
-    font-size: 2.4em;
-    margin: 1rem 0;
+    @include themify() {
+        color: themed('TitleColor');
+        font-weight: 500;
+        font-size: 2.4em;
+        margin: .7rem 0;
+    }
 }
 
 h3 {
-    font-size: 2.2em;
+    @include themify() {
+        color: themed('textColor');
+        font-size: 2.2em;
+    }
 }
 
 h4 {
-    font-size: 2em;
+    @include themify() {
+        color: themed('textColor');
+        font-size: 2em;
+    }
 }
 
 h5 {
-    font-size: 1.5em;
-    font-weight: 300;
-    margin: 1rem 0;
-    color: $lightTextColor;
+    @include themify($themes) {
+        font-size: 1.5em;
+        font-weight: 300;
+        margin: 1rem 0;
+        color: themed('lightTextColor');
+    }
 }
 
 h6 {
-    font-size: 1.5em;    
-    font-weight: 300;
+    @include themify() {
+        color: themed('textColor');
+        font-size: 1.5em;    
+        font-weight: 300;
+    }
 }
+
 blockquote {
-    color: $lightTextColor;
-    font-size: .9em;
-    background-color: #eeeeee;
-    padding: .7rem 1.5rem;
-    border-left: 5px solid $linkColor;
-    border-radius: 0 .5rem .5rem 0;
-    font-style: italic;
-    p {
-        margin: .3rem .5rem;
+    @include themify($themes) {
+        font-size: .9em;
+        background-color: themed('blockquote');
+        padding: .7rem 1.5rem;
+        border-left: 5px solid themed('linkColor');
+        border-radius: 0 .5rem .5rem 0;
+        font-style: italic;
+        transition: $transition;
+        p {
+            margin: .3rem .5rem;
+        }
     }
 }
 
@@ -99,14 +156,28 @@ img {
 }
 
 input {
-    border: none;
-    padding: .5rem 1rem;
-    border-radius: .5rem;
-    font-size: 1.6em;
-    border: .1rem solid #fff;
-    transition: .2s;
+    @include themify() {
+        background-color: themed('blockquote');
+        color: themed('textColor');
+        border: none;
+        padding: .5rem 1rem;
+        border-radius: .5rem;
+        font-size: 1.6em;
+        border: .1rem solid themed('cardColor');
+        transition: $transition;
+    }
 }
+
 input:focus {
-    border: .1rem solid $linkColor;
-    outline: none;
+    @include themify($themes) {
+        border: .1rem solid themed('linkColor');
+        outline: none;
+    }
+}
+label {
+    @include themify($themes) {
+        font-size: 1.6em;
+        margin: 0 .5rem;
+        color: themed('textColor');
+    }
 }

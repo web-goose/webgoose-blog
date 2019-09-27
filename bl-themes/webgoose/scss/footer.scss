@@ -1,9 +1,13 @@
 footer {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-    background-color: $baseColor;
+    @include themify() {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+        background-color: themed('baseColor');
+    }
     p {
-        color: #f0f0f0;
+        @include themify() {
+            color: #ffffff;
+        }
     }
 }

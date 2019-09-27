@@ -1,6 +1,6 @@
 <?php if (empty($content)): ?>
 <div class="">
-    <?php $language->p('Записей не найдено') ?>
+    <p><?php $language->p('Записей не найдено') ?></p>
 </div>
 <?php endif ?>
 
@@ -73,7 +73,7 @@
         <?php endif ?>
 
         <?php if (Paginator::showNext()): ?>
-        <li class=" page-item">
+        <li class="page-item">
             <a class="page-link" href="<?php echo Paginator::nextPageUrl() ?>"><?php echo $L->get('Туда'); ?>
                 &#9658;</a>
         </li>

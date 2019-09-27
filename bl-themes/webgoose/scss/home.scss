@@ -1,48 +1,60 @@
 .post-card {
-    background-color: #ffffff;
-    padding: .3rem 2rem;
-    margin: 1.2rem 0;
-    border-radius: .5rem;
+    @include themify() {
+        background-color: themed('cardColor');
+        padding: .3rem 2rem;
+        margin: 1.2rem 0;
+        border-radius: .5rem;
+        transition: $transition;
+    }
 }
 .read-more {
-    font-size: 1em;
+    @include themify() {
+        font-size: 1em;
+    }
 }
 
-.paginator {
-    .pagination {
+.pagination {
+    @include themify($themes) {
         padding: 0;
         justify-content: center;
         display: flex;
         list-style: none;
         .page-item {
-            background-color: #ffffff;
+            background-color: themed('cardColor');
             border-radius: .5rem;
-            padding: .8rem 1rem;
             margin-right: .3rem;
-            transition: .2s;
+            display: flex;
+            cursor: pointer;
+            transition: $transition;
             .page-link {
+                padding: .8rem;
                 margin: 0;
             }
         }
         .page-item:hover {
-            background-color: $lightTextColor;
+            background-color: themed('blockquote');
             .page-link {
-                color: #fff;
+                color: #ffffff;
             }
         }
     }
 }
 
-.tag {  
-    color: $tagColor;
-    font-weight: 500;
-    margin: 0 .3em;
-    font-size: 1em;
-    background-color: $tagBackgroundColor;
-    padding: .3rem .8rem;
-    border-radius: .3rem;
+.tag {
+    @include themify($themes) {  
+        color: themed('tagColor');
+        font-weight: 500;
+        margin: 0 .3em;
+        font-size: 1em;
+        background-color: themed('tagBackgroundColor');
+        padding: .3rem .8rem;
+        border-radius: .3rem;
+        transition: $transition;
+    }
 }
 .tag:hover {
-    background-color: $tagBackgroundColorHover;
-    color: $tagColorHover;
+    @include themify($themes) {
+        background-color: themed('tagBackgroundColorHover');
+        color: themed('tagColorHover');
+    }
 }
