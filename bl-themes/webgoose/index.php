@@ -30,11 +30,13 @@
 
         <?php include(THEME_DIR_PHP.'footer.php'); ?>
 
+        <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.0.0/dist/lazyload.min.js"></script>
+
         <?php
-        echo Theme::js('js/jquery-3.4.1.min.js');
-        echo Theme::js('js/bootstrap.min.js');
-        echo Theme::js('js/site.js');
-    ?>
+            echo Theme::js('js/jquery-3.4.1.min.js');
+            echo Theme::js('js/bootstrap.min.js');
+            echo Theme::js('js/site.js');
+        ?>
 
         <?php Theme::plugins('siteBodyEnd') ?>
     </div>

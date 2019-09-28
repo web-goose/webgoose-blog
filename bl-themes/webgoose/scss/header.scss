@@ -17,6 +17,9 @@ header {
         transition: $transition;
     }
 }
+.nav-items {
+    font-size: 1em;
+}
 .sticky {
     position:fixed;
     top: 0;

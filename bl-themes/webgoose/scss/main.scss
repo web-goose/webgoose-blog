@@ -89,7 +89,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+label {
     font-family: 'Rubik';
     transition: $transition;
 }
@@ -145,12 +146,12 @@ h6 {
 
 ul {
     list-style: disc;
-}
-
-li {
-    @include themify() {
-        color: themed('textColor');
-        transition: $transition;
+    font-size: 1.6em;
+    li {
+        @include themify() {
+            color: themed('textColor');
+            transition: $transition;
+        }
     }
 }
 
@@ -200,6 +201,7 @@ label {
         margin: 0 .5rem;
         color: themed('textColor');
         transition: $transition;
+        font-weight: 500;
     }
 }
 
@@ -207,15 +209,27 @@ pre {
     @include themify($themes) {
         padding: 2rem;
         border-radius: .3rem;
-        background-color: themed('blockquote');
+        background-color: themed('pre');
         margin: 2rem 0;        
         display: flex;
         align-content: center;
+        transition: $transition;
+        // border: .1rem solid themed('baseColor');
     }
 }
 
 code {
     @include themify($themes) {
         font-size: 1.6em;
+        color: themed('textColor');
+        transition: $transition;
+    }
+}
+
+table {
+    @include themify($themes) {
+        font-size: 1.6em;
+        color: themed('textColor');
+        transition: $transition;
     }
 }

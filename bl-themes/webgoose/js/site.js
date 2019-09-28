@@ -12,7 +12,6 @@ function getThemeClass(key) {
     if (currentTheme == null) {
         updateThemeClass('theme-light');
     }
-    console.log(currentTheme);
     return currentTheme;
 }
 
@@ -22,7 +21,6 @@ function updateThemeClass(newThemeClass) {
     $('body').addClass(newThemeClass);
     currentTheme = newThemeClass;
     setThemeSwitcherStatus();
-    console.log(currentTheme);
 }
 
 function setThemeSwitcherStatus() {
@@ -64,4 +62,8 @@ $(window).scroll(function () {
 
 document.getElementById('themeSwitcher').addEventListener('change', function (event) {
     (event.target.checked) ? updateThemeClass('theme-dark') : updateThemeClass('theme-light')
+});
+
+let lazyLoadInstance = new LazyLoad({
+    elements_selector: ".lazy"
 });

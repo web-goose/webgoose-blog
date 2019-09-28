@@ -26,6 +26,9 @@ header {
   background-color: #303030;
   transition: 0.3s; }
 
+.nav-items {
+  font-size: 1em; }
+
 .sticky {
   position: fixed;
   top: 0; }
@@ -225,6 +228,7 @@ header {
     cursor: pointer;
     transition: 0.3s; }
     .theme-light .pagination .page-item .page-link {
+      font-size: 1em;
       padding: .8rem;
       margin: 0; }
   .theme-light .pagination .page-item:hover {
@@ -245,6 +249,7 @@ header {
     cursor: pointer;
     transition: 0.3s; }
     .theme-dark .pagination .page-item .page-link {
+      font-size: 1em;
       padding: .8rem;
       margin: 0; }
   .theme-dark .pagination .page-item:hover {
@@ -296,6 +301,9 @@ header {
   margin: 1.2rem 0;
   border-radius: .5rem;
   transition: 0.3s; }
+
+.plugin ul {
+  font-size: 1em; }
 
 .theme-light footer {
   margin-top: 1rem;
@@ -389,7 +397,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+label {
   font-family: 'Rubik';
   transition: 0.3s; }
 
@@ -456,15 +465,14 @@ h6 {
   font-weight: 300; }
 
 ul {
-  list-style: disc; }
-
-.theme-light li {
-  color: #242424;
-  transition: 0.3s; }
-
-.theme-dark li {
-  color: #eeeeee;
-  transition: 0.3s; }
+  list-style: disc;
+  font-size: 1.6em; }
+  .theme-light ul li {
+    color: #242424;
+    transition: 0.3s; }
+  .theme-dark ul li {
+    color: #eeeeee;
+    transition: 0.3s; }
 
 .theme-light blockquote {
   font-size: .9em;
@@ -525,13 +533,15 @@ img {
   font-size: 1.6em;
   margin: 0 .5rem;
   color: #242424;
-  transition: 0.3s; }
+  transition: 0.3s;
+  font-weight: 500; }
 
 .theme-dark label {
   font-size: 1.6em;
   margin: 0 .5rem;
   color: #eeeeee;
-  transition: 0.3s; }
+  transition: 0.3s;
+  font-weight: 500; }
 
 .theme-light pre {
   padding: 2rem;
@@ -539,7 +549,8 @@ img {
   background-color: #eeeeee;
   margin: 2rem 0;
   display: flex;
-  align-content: center; }
+  align-content: center;
+  transition: 0.3s; }
 
 .theme-dark pre {
   padding: 2rem;
@@ -547,10 +558,25 @@ img {
   background-color: #464646;
   margin: 2rem 0;
   display: flex;
-  align-content: center; }
+  align-content: center;
+  transition: 0.3s; }
 
 .theme-light code {
-  font-size: 1.6em; }
+  font-size: 1.6em;
+  color: #242424;
+  transition: 0.3s; }
 
 .theme-dark code {
-  font-size: 1.6em; }
+  font-size: 1.6em;
+  color: #eeeeee;
+  transition: 0.3s; }
+
+.theme-light table {
+  font-size: 1.6em;
+  color: #242424;
+  transition: 0.3s; }
+
+.theme-dark table {
+  font-size: 1.6em;
+  color: #eeeeee;
+  transition: 0.3s; }

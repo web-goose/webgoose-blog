@@ -16,7 +16,7 @@
         </a>
 
         <?php if ($page->coverImage()): ?>
-        <img class="card-img" src="<?php echo $page->coverImage(); ?>" />
+        <img class="card-img lazy" data-src="<?php echo $page->coverImage(); ?>" />
         <?php endif ?>
 
         <h5 class="">
