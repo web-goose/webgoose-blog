@@ -2,12 +2,14 @@ footer {
     @include themify() {
         margin-top: 1rem;
         display: flex;
+        flex: 0 0 auto;
         justify-content: center;
-        background-color: themed('baseColor');
+        background-color: #242424;
+        transition: $transition;
     }
     p {
         @include themify() {
-            color: #ffffff;
+            color: #eeeeee;
         }
     }
 }

@@ -1,7 +1,7 @@
 .plugin {
     @include themify() {
         background-color: themed('cardColor');
-        padding: .9rem .8rem;
+        padding: .9rem;
         margin: 1.2rem 0;
         border-radius: .5rem;
         transition: $transition;

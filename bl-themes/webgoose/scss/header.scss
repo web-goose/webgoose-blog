@@ -14,7 +14,7 @@ header {
         justify-content: center;
         z-index: 100;
         background-color: themed('cardColor');
-        transition: linear .3s;
+        transition: $transition;
     }
 }
 .sticky {
@@ -48,7 +48,7 @@ header {
 
 .shrink {
     @include themify($themes) {
-        background-color: themed('baseColor');
+        background-color: #242424;
         padding: .5rem;
         .brand {
             font-size: 2.5em;
@@ -98,7 +98,7 @@ header {
         background-color: themed('blockquote');
         -webkit-transition: $transition;
         transition: $transition;
-        outline: none;
+        outline: none;  
       }
   }
   
@@ -124,14 +124,17 @@ header {
   
   input:focus + .slider {
     @include themify() {
-        box-shadow: 0 0 1px themed('linkColor');
+        // box-shadow: 0 0 3px themed('linkColor');
     }
   }
   
   input:checked + .slider:before {
-    -webkit-transform: translateX(1.5rem);
-    -ms-transform: translateX(1.5rem);
-    transform: translateX(1.5rem);
+    @include themify() {
+        -webkit-transform: translateX(1.5rem);
+        -ms-transform: translateX(1.5rem);
+        transform: translateX(1.5rem);
+        border: .1rem solid themed('textColor');
+    }
   }
   
   .slider.round {
@@ -149,5 +152,6 @@ header {
       margin: 0 1rem;
       align-self: center;
       background-color: themed('textColor');
+      transition: $transition;
     }
   }

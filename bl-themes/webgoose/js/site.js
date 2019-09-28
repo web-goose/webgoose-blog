@@ -34,7 +34,7 @@ function setThemeSwitcherStatus() {
 }
 
 $(function () {
-    let shrinkHeader = $('header').height();;
+    let shrinkHeader = $('header').height();
     $(window).scroll(() => {
         let scroll = getCurrentScroll();
         if (scroll >= shrinkHeader) {

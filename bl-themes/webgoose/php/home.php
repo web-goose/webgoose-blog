@@ -1,5 +1,5 @@
 <?php if (empty($content)): ?>
-<div class="">
+<div class="content">
     <p><?php $language->p('Записей не найдено') ?></p>
 </div>
 <?php endif ?>
