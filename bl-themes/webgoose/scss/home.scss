@@ -41,12 +41,22 @@
     }
 }
 
+.tags  {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    h5 {
+        padding-right: .5rem;
+    }
+}
+
 .tag {
     @include themify($themes) {  
         color: themed('tagColor');
         font-weight: 500;
-        margin: 0 .3em;
-        font-size: 1em;
+        height: 100%;
+        margin-right: .7rem;
+        font-size: 1.6em;
         background-color: themed('tagBackgroundColor');
         padding: .3rem .8rem;
         border-radius: .3rem;

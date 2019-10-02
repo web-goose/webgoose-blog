@@ -180,6 +180,7 @@ input {
     @include themify() {
         background-color: themed('blockquote');
         color: themed('textColor');
+        width: 100%;
         border: none;
         padding: .5rem 1rem;
         border-radius: .5rem;
@@ -214,7 +215,6 @@ pre {
         display: flex;
         align-content: center;
         transition: $transition;
-        // border: .1rem solid themed('baseColor');
     }
 }
 
@@ -232,4 +232,10 @@ table {
         color: themed('textColor');
         transition: $transition;
     }
+}
+
+hr {
+    width: 80%;
+    border-radius: 1rem;
+    height: .1rem;
 }

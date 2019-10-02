@@ -16,6 +16,7 @@
         <?php endforeach ?>
     </ul>
     <div class="vertical-hr"></div>
+    <hr>
     <div class="theme-switcher">
         <label>Темная тема</label>
         <label class="switch">

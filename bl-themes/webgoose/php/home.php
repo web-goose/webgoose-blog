@@ -25,7 +25,8 @@
         </h5>
 
         <?php if ($page->tags()): ?>
-        <h5>Метки:
+        <div class="tags">
+            <h5>Метки:</h5>
             <?php 
             $returnsArray = true;
 
@@ -38,7 +39,7 @@
             }
 
         ?>
-        </h5>
+        </div>
         <?php endif ?>
 
         <?php echo $page->contentBreak(); ?>
