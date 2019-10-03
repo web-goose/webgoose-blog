@@ -43,14 +43,3 @@
     <?php Theme::plugins('pageEnd'); ?>
 
 </div>
-
-<?php
-
-$className = 'SidebarAddonsPlugin';
-
-$plugin = getPlugin($className);
-
-echo $plugin->label();
-
-echo $plugin->siteSidebar();
-?>
