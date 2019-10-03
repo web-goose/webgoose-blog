@@ -13,7 +13,7 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-12 col-md-9">
+                <div class="col-12 col-lg-9">
                     <?php
                     if($WHERE_AM_I == 'page') {
                         include(THEME_DIR_PHP.'page.php');
@@ -22,7 +22,7 @@
                     }
                 ?>
                 </div>
-                <div class="col-12 col-md-3">
+                <div class="col-12 col-lg-3">
                     <?php include(THEME_DIR_PHP.'sidebar.php'); ?>
                 </div>
             </div>

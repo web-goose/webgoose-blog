@@ -8,5 +8,16 @@
     }
     ul {
         font-size: 1em;
+        padding: 0;
+        margin-left: 1rem;
+    }
+    li {
+        list-style: none;
+        display: flex;
+    }
+    li::before {
+        content: '\26AB';
+        align-self: center;
+        margin-right: .5rem;
     }
 }
